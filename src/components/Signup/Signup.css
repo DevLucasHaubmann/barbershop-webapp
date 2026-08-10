@@ -1,0 +1,32 @@
+.signup-wrapper {
+    min-height: 100vh;      
+    display: flex;          
+    align-items: center;   
+    justify-content: center;
+    background-color: #eaeaea; 
+}
+
+.custom-green-text {
+    color: #198754 !important; 
+}
+
+.custom-title {
+    font-size: 3rem; 
+}
+
+.span-link:hover {
+    color: #146c43 !important; 
+    text-decoration: underline !important;
+}
+
+.custom-green-btn {
+    background-color: #198754;
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.custom-green-btn:hover {
+    background-color: #146c43; 
+    color: white;
+}

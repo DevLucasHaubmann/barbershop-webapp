@@ -1,6 +1,6 @@
-import './Signup.css';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { createUser } from '../../services/UserService';
+import './Signup.css';
 
 interface FormData {
     firstName: string;
@@ -57,7 +57,8 @@ const Signup = () => {
         };
 
         try {
-            const result = await createUser(payload);
+            // eslint-disable-next-line
+            const result = await createUser(payload); 
             setStatus('Registration successful!');
         } catch (err) {
             setError((err as Error).toString());
