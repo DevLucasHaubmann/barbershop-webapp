@@ -1,5 +1,6 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import   { useState, type ChangeEvent, type FormEvent } from 'react';
 import { createUser } from '../../services/UserService';
+import { PasswordInput } from '../PasswordInput';
 import './Signup.css';
 
 interface FormData {
@@ -20,7 +21,7 @@ const Signup = () => {
         confirmPassword: '',
         phoneNumber: ''
     });
-
+    
     const [error, setError] = useState<string>('');
     const [status, setStatus] = useState<string>('');
 
@@ -31,7 +32,7 @@ const Signup = () => {
             [name]: value
         });
     };
-
+    
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         const extractedDDD = formData.phoneNumber.toString().slice(0, 2);
         const extractedNumber = formData.phoneNumber.toString().slice(2);
@@ -41,8 +42,8 @@ const Signup = () => {
         setError('');
 
         if (formData.password !== formData.confirmPassword) {
-            setError('');
-            setStatus('Passwords do not match');
+            setStatus('');
+            setError('Passwords do not match');
             
             return;
         }
@@ -114,14 +115,14 @@ const Signup = () => {
                         <span className="input-group-text bg-light">
                             <i className="bi bi-key-fill text-secondary"></i>
                         </span>
-                        <input name="password" value={formData.password} onChange={handleChange} type="password" className="form-control" placeholder="Password" />
+                        <PasswordInput name="password" value={formData.password} onChange={handleChange} type="password" className="form-control" placeholder="Password" />
                     </div>
 
                     <div className="input-group">
                         <span className="input-group-text bg-light">
                             <i className="bi bi-key-fill text-secondary"></i>
                         </span>
-                        <input name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} type="password" className="form-control" placeholder="Confirm Password" />
+                        <PasswordInput name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} type="password" className="form-control" placeholder="Confirm Password" />
                     </div>
 
                     <div className="input-group">
