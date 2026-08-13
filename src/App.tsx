@@ -1,4 +1,4 @@
-import Signup from './components/Signup/SignupForm';
+import Signup from './components/signup/SignupForm';
 
 function App() {
   return (

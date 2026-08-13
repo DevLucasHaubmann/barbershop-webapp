@@ -1,4 +1,4 @@
-import api from './api';
+import api from './Api';
 
 interface CreateUserData {
     firstName: string;
@@ -10,10 +10,5 @@ interface CreateUserData {
 }
 
 export const createUser = async (formData: CreateUserData) => {
-    try {
-        const response = await api.post('/users', formData);
-        return response.data;
-    } catch (error: any) {
-        throw error.response?.data || error.message;
-    }
+    return await api.post('/users', formData);
 };
