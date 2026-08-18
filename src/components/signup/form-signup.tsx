@@ -2,7 +2,8 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { createUser } from '../../services/UserService';
 import { PasswordInput } from '../utils/PasswordInput';
 import { extractServerErrorMessage, type Feedback } from '../../utils/ApiFeedback';
-import './Signup.css';
+import { Link } from 'react-router-dom';
+import '../../style/signup-form.css';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[1-9]{2}9?[0-9]{8}$/;
@@ -136,7 +137,7 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className="mt-4 mb-4 text-muted">
-                    Already Have An Account? <span className="custom-green-text span-link fw-bold text-decoration-none" style={{ cursor: 'pointer' }}>Sign In!</span>
+                    Already have an account? <Link to="/auth/login" className="custom-green-text span-link fw-bold text-decoration-none" style={{ cursor: 'pointer' }}>Sign In!</Link>
                 </div>
                 <button type="submit" className="btn custom-green-btn w-100 py-2 fw-bold" style={{ borderRadius: '8px' }}>
                     Sign Up
