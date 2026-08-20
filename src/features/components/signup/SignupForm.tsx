@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { createUser } from '../../api/userService';
+import { registerUser } from '../../api/userService';
 import { PasswordInput } from '../../../components/utils/PasswordInput';
-import { extractServerErrorMessage, type Feedback } from '../../../utils/ApiFeedback';
+import { type Feedback } from '../../../utils/ApiFeedback';
 import { Link } from 'react-router-dom';
 import { IMaskInput } from 'react-imask';
 import '../../../components/styles/app.css';
@@ -31,24 +31,25 @@ const Signup = () => {
         defaultValues: { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', phoneNumber: '' }
     });
 
-    const onSubmit = async (data: SignupFormData) => {
-        setFeedback({ type: 'info', message: 'Submitting your registration...' });
-        try {
-            const cleanPhone = data.phoneNumber.replace(/\D/g, '');
-            
-            await createUser({
-                firstName: data.firstName,
-                lastName: data.lastName,
-                email: data.email,
-                password: data.password,
-                phoneNumber: cleanPhone
-            });
-
-            setFeedback({ type: 'success', message: 'Registration successful! Welcome aboard.' });
-        } catch (err: unknown) {
-            setFeedback({ type: 'error', message: extractServerErrorMessage(err, 'An unexpected error occurred.') });
-        }
-    };
+const onSubmit = async (data: SignupFormData) => {
+    setFeedback({ type: 'info', message: 'Submitting your registration...' });
+    try {
+        const cleanPhone = data.phoneNumber.replace(/\D/g, '');
+        
+        await registerUser({
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            password: data.password,
+            phoneNumber: cleanPhone
+        });
+        
+        setFeedback({ type: 'success', message: 'Registration successful! Welcome aboard.' });
+    } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
+        setFeedback({ type: 'error', message: errorMessage });
+    }
+};
 
     const inputClasses = "w-full px-3 py-2.5 text-sm bg-[var(--color-input-bg)] border border-[var(--color-border)] rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brown-dark)] focus:border-transparent transition-all text-[var(--color-text-dark)] placeholder-[var(--color-placeholder)] shadow-sm";
     const labelClasses = "block text-[10px] font-bold tracking-[0.15em] text-[var(--color-brown-dark)] uppercase mb-1.5";
