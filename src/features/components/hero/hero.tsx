@@ -5,7 +5,7 @@ const secondaryButtonClasses = "bg-transparent border-2 border-[var(--color-bord
 
 export const Hero = () => (
     <div className="min-h-[85vh] w-full flex flex-col lg:flex-row bg-[var(--color-bg)] font-sans border-b border-[var(--color-border)]">
-        {/* Left Content */}
+        {/* Text Content */}
         <div className="w-full lg:flex-1 flex flex-col justify-center px-6 py-16 lg:px-12 xl:px-20">
             <div className="max-w-2xl w-full space-y-8">
                 <div className="space-y-4">
@@ -26,14 +26,15 @@ export const Hero = () => (
                 </div>
             </div>
         </div>
-        <div className="hidden lg:block h-auto my-12 border-l-[2px] border-dotted border-[var(--color-border)]"></div>
-        <div className="hidden w-full h-[50vh] lg:h-auto lg:flex-1 relative bg-[var(--color-overlay-base)]">
+        
+        {/* Image Container - Hidden on mobile, visible on large screens */}
+        <div className="hidden lg:block w-full h-[50vh] lg:h-auto lg:flex-1 relative bg-[var(--color-overlay-base)]">
             <img 
                 src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" 
                 alt="Premium Barbershop Interior" 
-                className="hidden absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity" 
+                className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity" 
             />
-            <div className="hidden absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[var(--color-overlay-90)] via-[var(--color-overlay-40)] to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-[var(--color-overlay-90)] via-[var(--color-overlay-40)] to-transparent opacity-60"></div>
         </div>
     </div>
 );
