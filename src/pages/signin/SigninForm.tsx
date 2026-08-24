@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import z from 'zod';
-import { PasswordInput } from '../../../components/utils/PasswordInput';
-import { type Feedback } from '../../../utils/ApiFeedback';
+import { PasswordInput } from '../../components/utils/PasswordInput';
+import { type Feedback } from '../../utils/ApiFeedback';
 import { Link, useNavigate } from 'react-router-dom';
-import { loginUser } from '../../api/userService';
-import '../../../components/styles/app.css';
+import { loginUser } from '../../features/api/userService';
+import '../../components/styles/app.css';
 
 const signinSchema = z.object({
     email: z.string().email('Please enter a valid email address'),
