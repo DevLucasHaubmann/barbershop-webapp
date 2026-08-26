@@ -14,10 +14,10 @@ export const BookingCTA = () => (
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link id="link" to="/auth/login" className="bg-[var(--color-bg)] hover:bg-white text-[var(--color-text-dark)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-brown-light)] shadow-lg text-center">
+                <Link id="link-brown" to="/auth/login" className="bg-[var(--color-bg)] hover:bg-white text-[var(--color-text-dark)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-brown-light)] shadow-lg text-center">
                     Book Appointment
                 </Link>
-                <a id="link" href="#services" className="bg-transparent border-2 border-[var(--color-border)] text-[var(--color-bg)] hover:bg-[var(--color-brown-light)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-border)] text-center">
+                <a id="link-white" href="#services" className="bg-transparent border-2 border-[var(--color-border)] text-[var(--color-bg)] hover:bg-[var(--color-brown-light)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-border)] text-center">
                     Explore Services
                 </a>
             </div>
