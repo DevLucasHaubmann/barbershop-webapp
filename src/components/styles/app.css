@@ -15,8 +15,8 @@
     --color-overlay-40: rgba(26, 23, 21, 0.4);
     
     --color-error-bg: #FEF2F2;
-    --color-error-text: #7F1D1D;
-    --color-error-border: #991B1B;
+    --color-error-text: #a31f1f;
+    --color-error-border: #db1a1a;
     --color-success-bg: #EFEBE4;
     --color-info-bg: #F3F4F6;
     --color-info-text: #1F2937;
@@ -28,14 +28,34 @@ body {
     color: var(--color-text-dark);
 }
 
-#link {
+#link-brown {
     color: var(--color-brown-light);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-#link:hover {
+#link-brown:hover {
     color: var(--color-text-muted);
+}
+
+#link-gray {
+    color: var(--color-info-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#link-gray:hover {
+    color: var(--color-overlay-base);
+}
+
+#link-white {
+    color: var(--color-info-bg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#link-white:hover {
+    color: var(--color-placeholder);
 }
 
 ::selection {
