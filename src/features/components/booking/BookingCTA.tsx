@@ -6,9 +6,11 @@ export const BookingCTA = () => (
         <div className="absolute bottom-8 right-8 w-24 h-24 border-b border-r border-[var(--color-brown-light)] opacity-30"></div>
         <div className="max-w-3xl mx-auto text-center relative z-10 space-y-6">
             <span className="section-label text-[var(--color-border)]">Appointment CTA</span>
-            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tighter uppercase text-[var(--color-bg)]">
+            
+            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tighter uppercase" style={{ color: 'var(--color-border)' }}>
                 Ready for your next cut?
             </h2>
+
             <p className="text-[var(--color-border)] text-sm font-medium pb-4">
                 Choose your barber, select a service, and reserve your chair in minutes.
             </p>
