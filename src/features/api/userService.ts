@@ -52,4 +52,15 @@ export const loginUser = async (data: LoginUserData) => {
         console.error("Login request failed:", error);
         throw new Error(errorMessage, { cause: error });
     }
+    
+};
+
+export const logoutUser = async () => {
+    try {
+        await api.post('/auth/logout'); 
+    } catch (error: unknown) {
+        const errorMessage = extractServerErrorMessage(error, "Logout failed due to an unexpected error.");
+        console.error("Logout request failed:", error);
+        throw new Error(errorMessage, { cause: error });
+    }
 };
