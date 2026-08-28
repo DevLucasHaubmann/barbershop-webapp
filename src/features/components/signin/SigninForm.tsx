@@ -4,9 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import z from 'zod';
 import { PasswordInput } from '../../../components/utils/PasswordInput';
 import { type Feedback } from '../../../utils/ApiFeedback';
-import { Link, useNavigate } from 'react-router-dom';
-import { loginUser } from '../../api/userService';
+import { Link } from 'react-router-dom';
 import '../../../components/styles/app.css';
+import { loginUser } from '../../api/userService';
 
 const signinSchema = z.object({
     email: z.string().email('Please enter a valid email address'),
@@ -17,7 +17,6 @@ type SigninFormData = z.infer<typeof signinSchema>;
 
 export default function Signin() {
     const [feedback, setFeedback] = useState<Feedback | null>(null);
-    const navigate = useNavigate();
 
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<SigninFormData>({
         resolver: zodResolver(signinSchema),
@@ -33,10 +32,6 @@ export default function Signin() {
             });
             
             setFeedback({ type: 'success', message: 'Signed in successfully!' });
-
-            setTimeout(() => {
-                navigate('/homepage'); 
-            }, 1000);
         } catch (err: unknown) {
             const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
             setFeedback({ type: 'error', message: errorMessage });
