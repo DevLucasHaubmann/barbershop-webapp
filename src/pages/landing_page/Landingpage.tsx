@@ -1,10 +1,9 @@
-import { Navbar } from "../../features/components/navbar/PublicNavbar";
+import { Navbar } from "../../features/components/navbar/navbar";
 import { Hero } from "../../features/components/hero/hero";
 import { AboutSection } from "../../features/components/about_section/AboutSection";
 import { ServicesSection } from "../../features/components//service_section/ServiceSection";
 import { BookingCTA } from "../../features/components/booking/BookingCTA";
 import { Footer } from "../../features/components/footer/Footer";
-import Barbers from "../../features/components/barbers/BarbersSection";
 import '../../components/styles/app.css';
 
 export function LandingPage() {
@@ -15,7 +14,6 @@ export function LandingPage() {
                 <Hero />
                 <AboutSection />
                 <ServicesSection />
-                <Barbers />
                 <BookingCTA />
             </main>
             <Footer />
