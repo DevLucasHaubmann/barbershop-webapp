@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { registerUser } from '../../features/api/userService';
-import { PasswordInput } from '../../components/utils/PasswordInput';
-import { type Feedback } from '../../utils/ApiFeedback';
+import { registerUser } from '../../api/userService';
+import { PasswordInput } from '../../../components/utils/PasswordInput';
+import { type Feedback } from '../../../utils/ApiFeedback';
 import { Link } from 'react-router-dom';
 import { IMaskInput } from 'react-imask';
-import '../../components/styles/app.css';
+import '../../../components/styles/app.css';
 
 const signupSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),

@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'; 
-import Signup from '../pages/signup/SignupForm';
-import Signin from '../pages/signin/SigninForm';
-import LandingPage from '../pages/landing_page/Landingpage';
+import Signup from '../features/components/signup/SignupForm';
+import Signin from '../features/components/signin/SigninForm';
 import '../components/styles/app.css';
+import LandingPage from '../features/components/landingpage/Landingpage';
 
 function App() {   
   return (     
