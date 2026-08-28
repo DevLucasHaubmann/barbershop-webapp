@@ -20,7 +20,7 @@ export const AboutSection = () => (
             </p>
             
             <div className="flex justify-center">
-                <Link id="link-white" to="/about" className="bg-transparent border-2 border-[var(--color-border)] text-[var(--color-bg)] hover:bg-[var(--color-brown-light)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-border)] text-center inline-flex items-center gap-2 group">
+                <Link id="link" to="/about" className="bg-transparent border-2 border-[var(--color-border)] text-[var(--color-bg)] hover:bg-[var(--color-brown-light)] text-sm font-bold py-4 px-8 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-border)] text-center inline-flex items-center gap-2 group">
                     Our Story 
                     <span className="group-hover:translate-x-1 transition-transform"><ArrowRight /></span>
                 </Link>

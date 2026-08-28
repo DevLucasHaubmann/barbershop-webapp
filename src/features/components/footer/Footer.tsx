@@ -9,7 +9,8 @@ export const Footer = () => (
             </div>
             <div className="flex flex-col gap-3 text-sm font-medium text-[var(--color-text-dark)]">
                 <span className="section-label text-[var(--color-brown-dark)]">Contact Info</span>
-                <a id="link-gray" href="mailto:hello@barbershop.com" className="w-fit hover:text-[var(--color-brown-light)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">hello@barbershop.com</a>                <span>(99) 99999-9999</span>
+                <a id="link" href="mailto:hello@barbershop.com" className="hover:text-[var(--color-brown-light)] transition-colors">hello@barbershop.com</a>
+                <span>(99) 99999-9999</span>
             </div>
             <div className="flex flex-col gap-3 text-sm font-medium text-[var(--color-text-dark)]">
                 <span className="section-label text-[var(--color-brown-dark)]">Hours</span>
@@ -24,8 +25,9 @@ export const Footer = () => (
             </div>
             <div className="flex flex-col gap-3 text-sm font-medium text-[var(--color-text-dark)] md:items-end">
                 <span className="section-label text-[var(--color-brown-dark)]">Socials</span>
-                <a id="link-gray" href="#" className="w-fit hover:text-[var(--color-brown-light)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">Instagram</a>
-                <a id="link-gray" href="#" className="w-fit hover:text-[var(--color-brown-light)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">Twitter (X)</a></div>
+                <a id="link" href="#" className="hover:text-[var(--color-brown-light)] transition-colors">Instagram</a>
+                <a id="link" href="#" className="hover:text-[var(--color-brown-light)] transition-colors">Twitter (X)</a>
+            </div>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-[10px] font-bold tracking-[0.1em] uppercase text-[var(--color-text-muted)]">
             <span>© 2026 Barbershop. All Rights Reserved.</span>

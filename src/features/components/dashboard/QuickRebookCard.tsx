@@ -20,7 +20,7 @@ export const QuickRebookCard = ({ lastCut, preferredBarber }: QuickRebookProps) 
         </p>
       </div>
     </div>
-    <Link id="link-gray" to={`/booking?service=${lastCut.toLowerCase()}&barber=${preferredBarber.toLowerCase()}`} className="block w-full text-center bg-transparent border-2 border-[var(--color-border)] hover:border-[var(--color-brown-dark)] hover:bg-[var(--color-brown-dark)] hover:text-[var(--color-bg)] text-[var(--color-text-dark)] text-xs font-bold py-3.5 px-4 rounded-sm tracking-[0.1em] uppercase transition-all shadow-sm">
+    <Link to={`/booking?service=${lastCut.toLowerCase()}&barber=${preferredBarber.toLowerCase()}`} className="block w-full text-center bg-transparent border-2 border-[var(--color-border)] hover:border-[var(--color-brown-dark)] hover:bg-[var(--color-brown-dark)] hover:text-[var(--color-bg)] text-[var(--color-text-dark)] text-xs font-bold py-3.5 px-4 rounded-sm tracking-[0.1em] uppercase transition-all shadow-sm">
       Find Next Available Slot
     </Link>
   </div>
