@@ -81,8 +81,8 @@ export default function Signin() {
                             {errors.password && <p className="text-[var(--color-error-text)] text-xs mt-1 font-semibold">{errors.password.message}</p>}
                         </div>
 
-                       <Link id="link-gray" to="/auth/forgot-password" className="w-fit text-[12px] font-bold tracking-wide text-[var(--color-brown-light)] hover:text-[var(--color-brown-dark)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">
-                            Forgot your password?
+                        <Link id="link" to="/auth/forgot-password" className="text-[12px] font-bold tracking-wide text-[var(--color-brown-light)] hover:text-[var(--color-brown-dark)] transition-colors">
+                                    Forgot your password?
                         </Link>
 
                         <button type="submit" disabled={isSubmitting} className="w-full mt-4 bg-[var(--color-brown-dark)] hover:bg-[var(--color-text-dark)] disabled:bg-[var(--color-placeholder)] disabled:cursor-not-allowed text-[var(--color-bg)] text-sm font-bold py-3 px-4 rounded-sm tracking-[0.1em] uppercase transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[var(--color-border)] shadow-md">
@@ -93,9 +93,9 @@ export default function Signin() {
                     <div className="text-center pt-2">
                         <p className="text-[var(--color-text-muted)] text-sm font-medium">
                             New here?{' '}
-                         <Link id="link-gray" to="/auth/register" className="w-fit text-[var(--color-brown-light)] font-bold hover:text-[var(--color-brown-dark)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">
-                            Sign Up!
-                        </Link>
+                            <Link id="link" to="/auth/register" className="text-[var(--color-brown-light)] font-extrabold hover:text-[var(--color-brown-dark)] transition-colors">
+                                Sign Up!
+                            </Link>
                         </p>
                     </div>
                 </div>

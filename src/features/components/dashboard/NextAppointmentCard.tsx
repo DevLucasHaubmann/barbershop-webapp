@@ -24,11 +24,14 @@ export const NextAppointmentCard = ({ appointment }: { appointment: AppointmentP
     </div>
 
     <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[var(--color-border)]">
-      <button className="bg-[var(--color-brown-dark)] hover:bg-[var(--color-text-dark)] text-[var(--color-info-bg)] text-xs font-bold py-3 px-6 rounded-sm tracking-[0.1em] uppercase transition-all shadow-md focus:ring-2 focus:ring-[var(--color-brown-light)]">
+      <button className="bg-[var(--color-brown-dark)] hover:bg-[var(--color-text-dark)] text-[var(--color-bg)] text-xs font-bold py-3 px-6 rounded-sm tracking-[0.1em] uppercase transition-all shadow-md focus:ring-2 focus:ring-[var(--color-brown-light)]">
         Reschedule
       </button>
       <button className="bg-transparent border border-[var(--color-border)] hover:bg-[var(--color-error-bg)] hover:text-[var(--color-error-text)] hover:border-[var(--color-error-border)] text-[var(--color-text-dark)] text-xs font-bold py-3 px-6 rounded-sm tracking-[0.1em] uppercase transition-all">
         Cancel
+      </button>
+      <button className="bg-transparent text-[var(--color-text-muted)] hover:text-[var(--color-brown-dark)] text-xs font-bold py-3 px-4 tracking-[0.1em] uppercase transition-all md:ml-auto">
+        Get Directions
       </button>
     </div>
   </div>

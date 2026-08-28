@@ -135,9 +135,7 @@ const onSubmit = async (data: SignupFormData) => {
                     <div className="text-center pt-1">
                         <p className="text-[var(--color-text-muted)] text-sm font-medium">
                             Already have an account?{' '}
-                            <Link id="link-gray" to="/auth/login" className="w-fit text-[var(--color-brown-light)] font-bold hover:text-[var(--color-brown-dark)] transition-colors border-b-2 border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">
-                                Sign In
-                            </Link>
+                            <Link id="link" to="/auth/login" className="text-[var(--color-brown-light)] font-extrabold hover:text-[var(--color-brown-dark)] transition-colors">Sign In</Link>
                         </p>
                     </div>
                 </div>

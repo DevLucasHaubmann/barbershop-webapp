@@ -28,7 +28,7 @@ export const FavoriteBarbersCard = ({ barbers }: { barbers: Barber[] }) => (
                 <p className="text-[10px] uppercase tracking-widest text-[var(--color-brown-light)] mt-0.5">{barber.role}</p>
               </div>
             </div>
-            <Link id="link-gray" to={`/booking?barber=${barber.name.toLowerCase()}`} className="text-[10px] font-bold text-[var(--color-text-muted)] hover:text-[var(--color-brown-dark)] uppercase tracking-[0.1em] transition-colors border-b border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">
+            <Link to={`/booking?barber=${barber.name.toLowerCase()}`} className="text-[10px] font-bold text-[var(--color-text-muted)] hover:text-[var(--color-brown-dark)] uppercase tracking-[0.1em] transition-colors border-b border-transparent hover:border-[var(--color-brown-dark)] pb-0.5">
               View Schedule
             </Link>
           </div>
