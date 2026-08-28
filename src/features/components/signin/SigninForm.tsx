@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import z from 'zod';
+import * as z from 'zod';
 import { PasswordInput } from '../../../components/utils/PasswordInput';
-import { type Feedback } from '../../../utils/ApiFeedback';
+import { extractServerErrorMessage, type Feedback } from '../../../utils/ApiFeedback';
 import { Link } from 'react-router-dom';
 import '../../../components/styles/app.css';
-import { loginUser } from '../../api/userService';
 
 const signinSchema = z.object({
     email: z.string().email('Please enter a valid email address'),
@@ -23,18 +22,13 @@ export default function Signin() {
         defaultValues: { email: '', password: '' }
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onSubmit = async (data: SigninFormData) => {
         setFeedback({ type: 'info', message: 'Signing in...' });
         try {
-            await loginUser({
-                email: data.email,
-                password: data.password
-            });
-            
             setFeedback({ type: 'success', message: 'Signed in successfully!' });
         } catch (err: unknown) {
-            const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
-            setFeedback({ type: 'error', message: errorMessage });
+            setFeedback({ type: 'error', message: extractServerErrorMessage(err, 'An unexpected error occurred.') });
         }
     };
 
