@@ -1,4 +1,4 @@
-import api from './createUser';
+import api from './Api';
 
 export interface RegisterUserData {
     firstName: string;
