@@ -28,23 +28,12 @@ body {
     color: var(--color-text-dark);
 }
 
-#link {
+#link{
     color: var(--color-brown-light);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-#link:hover {
+#link:hover{
     color: var(--color-text-muted);
-}
-
-::selection {
-    background-color: var(--color-brown-dark);
-    color: var(--color-bg);
-}
-
-@layer components {
-    .section-label {
-        @apply block text-[10px] font-bold tracking-[0.15em] uppercase mb-1.5;
-    }
-}
+}   
