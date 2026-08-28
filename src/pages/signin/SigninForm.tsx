@@ -35,7 +35,7 @@ export default function Signin() {
             setFeedback({ type: 'success', message: 'Signed in successfully!' });
 
             setTimeout(() => {
-                navigate('/dashboard'); 
+                navigate('/homepage'); 
             }, 1000);
         } catch (err: unknown) {
             const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
