@@ -1,5 +1,4 @@
-import api from './api';
-import { extractServerErrorMessage } from '../../utils/ApiFeedback';
+import api from './createUser';
 
 export interface RegisterUserData {
     firstName: string;
@@ -9,12 +8,7 @@ export interface RegisterUserData {
     phoneNumber: string;
 }
 
-export interface LoginUserData {
-    email: string;
-    password: string;
-}
-
-export const registerUser = async (data: RegisterUserData) => {
+export const createUser = async (data: RegisterUserData) => {
     const extractedDDD = data.phoneNumber.slice(0, 2);
     const extractedNumber = data.phoneNumber.slice(2);
 
@@ -27,29 +21,5 @@ export const registerUser = async (data: RegisterUserData) => {
         phoneNumber: extractedNumber
     };
 
-    try {
-        const response = await api.post('/auth/register', payload);
-        return response.data; 
-    } catch (error: unknown) {
-        const errorMessage = extractServerErrorMessage(error, "Registration failed due to an unexpected error.");
-        console.error("Registration request failed:", error);
-    
-        throw new Error(errorMessage, { cause: error });
-    }
-};
-
-export const loginUser = async (data: LoginUserData) => {
-    const payload = {
-        email: data.email,
-        password: data.password
-    };
-
-    try {
-        const response = await api.post('/auth/login', payload);
-        return response.data;
-    } catch (error: unknown) {
-        const errorMessage = extractServerErrorMessage(error, "Invalid email or password. Please try again.");
-        console.error("Login request failed:", error);
-        throw new Error(errorMessage, { cause: error });
-    }
+    return await api.post('/users', payload);
 };
