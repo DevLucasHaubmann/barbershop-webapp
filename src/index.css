@@ -24,8 +24,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  background-color: #1a223d;
+
   @media (max-width: 1024px) {
     font-size: 16px;
   }
