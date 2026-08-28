@@ -11,8 +11,8 @@ export const AboutSection = () => (
                 About Us
             </span>
             
-            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tighter uppercase" style={{ color: '#D1CCC5' }}>
-                Craft Over Everything. 
+            <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tighter uppercase text-[var(--color-bg)]">
+                Craft Over Everything.
             </h2>
             
             <p className="text-[var(--color-border)] text-sm font-medium pb-4 leading-relaxed">
