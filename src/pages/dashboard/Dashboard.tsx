@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { AuthenticatedNavbar } from '../../features/components/navbar/AuthenticatedNavbar';
 import { WelcomeHeader } from '../../features/components/dashboard/WelcomeHeader';
 import { NextAppointmentCard } from '../../features/components/dashboard/NextAppointmentCard';
@@ -6,7 +5,6 @@ import { LoyaltyRewardsCard } from '../../features/components/dashboard/LoyaltyR
 import { QuickRebookCard } from '../../features/components/dashboard/QuickRebookCard';
 import { FavoriteBarbersCard } from '../../features/components/dashboard/FavoriteBarbersCard';
 import { Footer } from "../../features/components/footer/Footer";
-import { logoutUser } from '../../features/api/userService';
 import '../../components/styles/app.css';
 
 const MOCK_USER = {
@@ -36,25 +34,10 @@ const MOCK_FAVORITE_BARBERS = [
 ];
 
 export default function HomePage() {
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    try {
-      await logoutUser();
-      navigate('/landingpage', { replace: true });
-    } catch (error) {
-      console.error('Logout failed:', error);
-      navigate('/landingpage', { replace: true });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[var(--color-bg)] font-sans text-[var(--color-text-dark)] selection:bg-[var(--color-brown-dark)] selection:text-[var(--color-bg)]">
       
-      <AuthenticatedNavbar 
-        firstName={MOCK_USER.firstName} 
-        onLogout={handleLogout} 
-      />
+      <AuthenticatedNavbar firstName={MOCK_USER.firstName} />
 
       <main className="max-w-5xl mx-auto px-6 py-12 lg:py-16 space-y-10">
         
